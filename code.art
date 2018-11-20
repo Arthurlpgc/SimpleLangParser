@@ -1,0 +1,7 @@
+fib := 1;
+res := 1;
+while fib < 6 do {
+    res := res * fib;
+    fib := fib + 1;
+}
+print res;
