@@ -1,5 +1,6 @@
 import Text.ParserCombinators.Parsec
 import Structure
+import System.Environment
 
 constantExprParse :: GenParser Char st Exp
 constantExprParse = 
@@ -198,7 +199,8 @@ run entry opt
 
 main :: IO ()
 main = do 
-    fleText <- readFile "code2.art";
+    [arg] <- getArgs;
+    fleText <- readFile (arg);
     let out = parse file "" fleText;
-    run out 1;
+    run out 0;
     
